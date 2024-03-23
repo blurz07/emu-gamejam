@@ -1407,6 +1407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1009678542}
   bulletPrefab: {fileID: 2214595848210499107, guid: 9a6937b699617694980c0c93a40b2464, type: 3}
+  currentClip: 10
+  maxClip: 10
   bulletForce: 20
 --- !u!114 &1125615089
 MonoBehaviour:

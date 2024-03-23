@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 38761641}
   - component: {fileID: 38761642}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 143815712}
   - component: {fileID: 143815713}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 144727780}
   - component: {fileID: 144727781}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250149991}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -766,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434288637}
   - component: {fileID: 434288638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: rightarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1027,7 +1027,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!4 &822044133
 Transform:
   m_ObjectHideFlags: 0
@@ -1084,7 +1084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065364480}
   - component: {fileID: 1065364481}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: leftarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 1125615091}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1275,8 +1275,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1198178671}
-  m_Layer: 0
-  m_Name: firePoint
+  m_Layer: 2
+  m_Name: enemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1310,7 +1310,10 @@ GameObject:
   - component: {fileID: 1329409854}
   - component: {fileID: 1329409853}
   - component: {fileID: 1329409857}
-  m_Layer: 0
+  - component: {fileID: 1329409858}
+  - component: {fileID: 1329409859}
+  - component: {fileID: 1329409861}
+  m_Layer: 2
   m_Name: enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1438,6 +1441,59 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 1125615090}
+--- !u!114 &1329409858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329409852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f5c0ab00022be44881b306d33ba6e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 1329409852}
+  Player: {fileID: 1125615090}
+  cam: {fileID: 250149993}
+  _rigidbody2D: {fileID: 1329409859}
+--- !u!50 &1329409859
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329409852}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1329409861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329409852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c31328c6374394e99cf35029aa660d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyFirePoint: {fileID: 1198178671}
+  bulletPrefab: {fileID: 2214595848210499107, guid: 9a6937b699617694980c0c93a40b2464, type: 3}
+  Player: {fileID: 1125615086}
+  bulletForce: 20
 --- !u!1 &1529227667
 GameObject:
   m_ObjectHideFlags: 0

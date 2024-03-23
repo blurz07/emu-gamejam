@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
@@ -9,7 +10,7 @@ public class EnemyShooting : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject Player;
     private bool haslineofsight = false;
-
+    private bool isFiring;
     public float bulletForce = 20f;
 
     void Start()
@@ -22,10 +23,10 @@ public class EnemyShooting : MonoBehaviour
         if (ray.collider != null)
         {
             haslineofsight = ray.collider.CompareTag("Player");
-            if (haslineofsight)
+            if (haslineofsight && isFiring == false)
             {
                 Debug.DrawRay(transform.position, Player.transform.position - transform.position, Color.green);
-                Shoot();
+                StartCoroutine(Shoot());
             }
             else
             {
@@ -34,11 +35,14 @@ public class EnemyShooting : MonoBehaviour
         }
     }
 
-    void Shoot()
+    IEnumerator Shoot()
     {
+        isFiring = true;
         GameObject Bullet = Instantiate(bulletPrefab, enemyFirePoint.position, enemyFirePoint.rotation);
         Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(enemyFirePoint.up * bulletForce, ForceMode2D.Impulse);
-
+        yield return new WaitForSeconds(0.4f);
+        isFiring = false;
+        yield return null;
     }
 }

@@ -1313,6 +1313,7 @@ GameObject:
   - component: {fileID: 1329409858}
   - component: {fileID: 1329409859}
   - component: {fileID: 1329409861}
+  - component: {fileID: 1329409862}
   m_Layer: 2
   m_Name: enemy
   m_TagString: Untagged
@@ -1494,6 +1495,20 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2214595848210499107, guid: 9a6937b699617694980c0c93a40b2464, type: 3}
   Player: {fileID: 1125615086}
   bulletForce: 20
+--- !u!114 &1329409862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329409852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b66c444021441a44aabc0d58ed73f506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  max_health: 3
 --- !u!1 &1529227667
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class shooting : MonoBehaviour
 
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public int currentClip = 10;
+    public int maxClip = 10;
     
 
     public float bulletForce = 20f;
@@ -17,12 +19,27 @@ public class shooting : MonoBehaviour
         {
             Shoot();
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
+
     }
 
     void Shoot()
     {
-        GameObject Bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        if (currentClip > 0)
+        {
+            GameObject Bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = Bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            currentClip--;
+        }
+    }
+
+    public void Reload()
+    {
+        currentClip = maxClip;
     }
 }

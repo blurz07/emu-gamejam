@@ -12,6 +12,9 @@ public class EnemyShooting : MonoBehaviour
     private bool haslineofsight = false;
     private bool isFiring;
     public float bulletForce = 20f;
+    public AudioSource source;
+    public AudioClip clip;
+
 
     void Start()
     {
@@ -27,6 +30,8 @@ public class EnemyShooting : MonoBehaviour
             {
                 Debug.DrawRay(transform.position, Player.transform.position - transform.position, Color.green);
                 StartCoroutine(Shoot());
+                source.PlayOneShot(clip);
+
             }
             else
             {

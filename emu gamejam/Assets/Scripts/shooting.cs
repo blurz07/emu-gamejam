@@ -12,9 +12,17 @@ public class shooting : MonoBehaviour
     public int maxClip = 10;
     public Text ammodisplay;
     public Text maxammodisplay;
+    public AudioSource source;
+    public AudioClip clip;
+    public AudioSource source2;
+    public AudioClip clip2;
 
     public float bulletForce = 20f;
-    
+
+    private void Start()
+    {
+    }
+
     void Update()
     {
         maxammodisplay.text = maxClip.ToString();
@@ -22,11 +30,17 @@ public class shooting : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+            
+        }
+        if (Input.GetButtonDown("Fire1") && currentClip>0)
+        {
+            source.PlayOneShot(clip);
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
+            source.PlayOneShot(clip2);
         }
 
     }
@@ -41,7 +55,6 @@ public class shooting : MonoBehaviour
             currentClip--;
         }
     }
-
     public void Reload()
     {
         currentClip = maxClip;

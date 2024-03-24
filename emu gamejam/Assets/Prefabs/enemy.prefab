@@ -759,6 +759,7 @@ GameObject:
   - component: {fileID: 8338100813931352398}
   - component: {fileID: 8338100813931352397}
   - component: {fileID: -8292319369181911249}
+  - component: {fileID: 1255379979757744146}
   m_Layer: 2
   m_Name: enemy
   m_TagString: Untagged
@@ -848,7 +849,7 @@ MonoBehaviour:
   radius: 0.5
   height: 2
   canMove: 1
-  maxSpeed: 4
+  maxSpeed: 8
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -869,7 +870,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 2
-  endReachedDistance: 15
+  endReachedDistance: 10
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -943,6 +944,7 @@ MonoBehaviour:
   bulletForce: 20
   source: {fileID: -8292319369181911249}
   clip: {fileID: 8300000, guid: d3fa4fedbd764bd45ad437bcf7f42d3f, type: 3}
+  target: {fileID: 8583674687450717162, guid: 33bda50dee7fc644091fca15aa552a08, type: 3}
 --- !u!114 &8338100813931352397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,7 +972,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3fa4fedbd764bd45ad437bcf7f42d3f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1055,6 +1057,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1255379979757744146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8338100813931352375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e826f38988bcf48a09d437a02a49c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 8583674687450717162, guid: 33bda50dee7fc644091fca15aa552a08, type: 3}
+  enemy: {fileID: 8338100813931352395}
 --- !u!1 &8338100814149323616
 GameObject:
   m_ObjectHideFlags: 0

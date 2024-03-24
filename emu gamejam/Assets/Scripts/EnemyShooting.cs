@@ -15,7 +15,6 @@ public class EnemyShooting : MonoBehaviour
     public AudioSource source;
     public AudioClip clip;
 
-
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -28,14 +27,8 @@ public class EnemyShooting : MonoBehaviour
             haslineofsight = ray.collider.CompareTag("Player");
             if (haslineofsight && isFiring == false)
             {
-                Debug.DrawRay(transform.position, Player.transform.position - transform.position, Color.green);
-                StartCoroutine(Shoot());
-                source.PlayOneShot(clip);
-
-            }
-            else
-            {
-                Debug.DrawRay(transform.position, Player.transform.position - transform.position, Color.red);
+               StartCoroutine(Shoot());
+               source.PlayOneShot(clip);
             }
         }
     }

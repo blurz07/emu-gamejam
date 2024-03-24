@@ -43,3 +43,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Tilemap0
+    uniqueID: 4243888365
+    locked: 0
+  - name: Tilemap1
+    uniqueID: 1241124751
+    locked: 0
+  - name: Player
+    uniqueID: 2191283899
+    locked: 0
+  - name: Canvas
+    uniqueID: 3489548943
+    locked: 0
